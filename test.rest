@@ -1,0 +1,12 @@
+###
+POST http://localhost:5001/api/login 
+Content-Type: application/json
+
+{
+    "email": "nigga",
+    "password": "nigga"
+}
+
+###
+GET http://localhost:5001/api/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZGMzOWVhYzdmODc0MDQ2NThmNDI2NSIsInJvbGUiOiIxIiwiaWF0IjoxNjkyMTU1ODY3LCJleHAiOjE2OTIyNDIyNjd9.1lNev__b5mCuEgZN-cPFlB9UraMcrp9Nb-dX_QCmM5w
