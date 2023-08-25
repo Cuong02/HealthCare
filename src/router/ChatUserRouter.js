@@ -6,7 +6,7 @@ ChatUserRouter.post('/api/chat/create-user', async(req, res) => {
     try {   
         const {username} = req.body;
         const newChatUser = new ChatUser({
-            name: username
+            username: username
         });
         const savedChatUser = await newChatUser.save();
         res.status(200).json(savedChatUser);
@@ -35,5 +35,14 @@ ChatUserRouter.get('/api/chat/get-all-users', async(req, res) => {
     }
 })
 
-module.exports = ChatUserRouter;
+// Delete chat user 
+ChatUserRouter.delete('/api/chat/delete-user/:id', async(req, res) => {
+    try {
+        await ChatUser.findByIdAndDelete(req.params.id);
+        res.status(200).json("Chat user has been deleted...");
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
 
+module.exports = ChatUserRouter;
